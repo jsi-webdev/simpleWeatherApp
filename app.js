@@ -1,6 +1,10 @@
 // jshint esversion : 8
 
-weatherData = { city: "MIAMI", state: "US" };
+// weatherData = { city: "MIAMI", state: "US" };
+// Init Storage
+const storage = new Storage();
+// Get stored location data
+const weatherData = storage.getLocationData();
 
 // Init weather object
 const weather = new Weather(weatherData.city, weatherData.state);
