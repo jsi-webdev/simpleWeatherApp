@@ -13,7 +13,6 @@ class Storage {
     if (localStorage.getItem("city") === null) {
       this.city = this.defualtCity;
     } else {
-      console.log(localStorage.getItem("city"));
       this.city = localStorage.getItem("city");
     }
     // Get State
@@ -29,5 +28,8 @@ class Storage {
     };
   }
 
-  setLocationData() {}
+  setLocationData(city, state) {
+    localStorage.setItem("city", city);
+    localStorage.setItem("state", state);
+  }
 }

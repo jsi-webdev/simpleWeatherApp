@@ -16,6 +16,23 @@ const ui = new UI();
 // weather.getWeather().then((data) => console.log(data));
 document.addEventListener("DOMContentLoaded", getWeather);
 
+// Change location event
+document.getElementById("w-change-btn").addEventListener("click", () => {
+  const city = document.getElementById("city").value;
+  const state = document.getElementById("state").value;
+
+  // Change location
+  weather.changeLocation(city, state);
+  // Store location data in LS
+  storage.setLocationData(city, state);
+
+  // Get and display weather
+  getWeather();
+
+  // Close modal
+  $("#locModal").modal("hide");
+});
+
 function getWeather() {
   weather
     .getWeather()

@@ -24,4 +24,10 @@ class Weather {
     //     console.log(data);
     //   });
   }
+
+  // Change weather location
+  changeLocation(city, state) {
+    this.city = city;
+    this.state = state;
+  }
 }
